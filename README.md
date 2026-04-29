@@ -7,7 +7,7 @@ colcon build --merge-install
 source install/local_setup.bash
 ```
 A custom version of swerve_drive_controller is required.
-It can be found here: [text](https://github.com/Bungok/ros2_controllers_orion)
+It can be found [here:](https://github.com/Bungok/ros2_controllers_orion)
 In the ros2_controllers_orion directory run:
 ```
 colcon build --packages-select swerve_drive_controller
