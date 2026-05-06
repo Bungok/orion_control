@@ -1,19 +1,44 @@
 # orion_control
 This package translates a singular input vector into separate wheel and turntable commands, using the ros2_control framework.
 ## Building from source
-To build the package run:
+
+Install required dependencies:
 ```
+sudo apt install ros-${ROS_DISTRO}-ros2-control ros-${ROS_DISTRO}-ros2-controllers ros-${ROS_DISTRO}-ros2-control-cmake
+sudo apt install libpaho-mqtt-dev
+#sudo apt install libpaho-mqttpp-dev #idk if this is required
+```
+
+```
+git clone https://github.com/Bungok/ros2_controllers_orion.git
+cd ros2_controllers_orion
+git checkout feature/swerve-drive-controller
+colcon build --packages-select swerve_drive_controller
+#FIX errors
+cd ..
+
+```
+
+```
+git clone https://github.com/Bungok/mqtt_hardware_interface.git
+cd mqtt_hardware_interface
+colcon build
+cd ..
+```
+
+To build the package run:
+
+```
+cd ../orion_control/
+source ../ros2_controllers_orion/install/setup.bash
+source ../mqtt_hardware_interface/install/setup.bash
 colcon build --merge-install
 source install/local_setup.bash
+
 ```
-Install required dependencies:
-https://github.com/Bungok/mqtt_hardware_interface/tree/main
-https://github.com/Bungok/ros2_controllers_orion
-For swerve drive controller, in the ros2_controllers_orion directory run:
-```
-colcon build --packages-select swerve_drive_controller
-source install/local_setup.bash
-```
+
+
+
 
 ## Running
 To run in the Gazebo simulation mode run:

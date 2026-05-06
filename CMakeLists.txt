@@ -46,7 +46,7 @@ target_link_libraries(orion_control PUBLIC
   pluginlib::pluginlib
   rclcpp::rclcpp
   rclcpp_lifecycle::rclcpp_lifecycle
-  mqtt_hardware_interface::MqttHardwareInterface
+  mqtt_hardware_interface::mqtt_hardware_interface
 )
 
 # Export hardware plugins
